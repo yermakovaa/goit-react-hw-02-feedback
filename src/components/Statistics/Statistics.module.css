@@ -1,0 +1,9 @@
+.list {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.item {
+  color: var(--secTextColor);
+  font-size: 15px;
+}
