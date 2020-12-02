@@ -12,14 +12,14 @@ class App extends Component {
     bad: 0,
   };
 
-  addFeedback = e => {
-    const name = e.target.textContent;
-    this.setState(prevState => ({ [name]: prevState[name] + 1 }));
+  addFeedback = option => {
+    this.setState(state => ({
+      [option]: state[option] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
-    const { good, neutral, bad } = this.state;
-    return good + neutral + bad;
+    return Object.values(this.state).reduce((acc, option) => acc + option, 0);
   };
 
   countPositiveFeedbackPercentage = () => {
